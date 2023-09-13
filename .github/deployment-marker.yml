@@ -1,0 +1,18 @@
+name: Create Deployment Marker
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  create-marker:
+    runs-on: ubuntu-22.4
+
+    steps:
+      - name: Create Deployment Marker
+        run: |
+          echo "Creating deployment marker..."
+          # Add your deployment marker creation script or command here
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
